@@ -66,6 +66,7 @@ export default function App() {
   }
 
   async function handleDelete(id) {
+    if (!window.confirm("delete this post?")) return;
     await fetch(`${API}/posts/${id}`, { method: "DELETE" });
     loadPosts();
   }
